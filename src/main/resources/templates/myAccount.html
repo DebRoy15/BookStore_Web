@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head th:replace="common/header :: common-header"></head>
+<body>
+	<div th:replace="common/header :: navbar"></div>
+	<div class="clear-fix"></div>
+	<div class="container">
+		<div class="row" style="margin-top: -100px">
+			<div class="col-xs-8">
+				<h2 class="section-headline">
+					<span>User Account</span>
+				</h2>
+			</div>
+			<div class="col-xs-4">
+				<img alt="logo" src="/image/logo.png" class="img-responsive">
+			</div>
+		</div>
+		<hr
+			style="position: absolute; width: 100%; height: 6px; background-color: #333; z-index: -1; margin-top: -140px;" />
+		<img alt="wood" src="/image/wood.jpg" class="img-responsive"
+			style="margin-top: -70px;" />
+
+		<div class="row" style="margin-top: 60px">
+			<div class="col-xs-9 col-xs-offset-3">
+
+				<!-- Nav Tabs -->
+				<ul class="nav nav-tabs">
+					<li><a href="#tab-1" data-toggle="tab"><span
+							style="color: blue;">Create new account</span></a></li>
+					<li><a href="#tab-2" data-toggle="tab"><span
+							style="color: blue;">Log in</span></a></li>
+					<li><a href="#tab-3" data-toggle="tab"><span
+							style="color: blue;">Forget password</span></a></li>
+				</ul>
+
+				<!-- Tab Panels -->
+				<div class="tab-content">
+				
+				<!-- Create a new user -->
+					<div class="tab-pane fade" id="tab-1">
+						<div class="panel-group">
+							<div class="panel panel-default"
+								style="background-color: #ededed; margin-top: 20px">
+								<form action="">
+									<div class="from-group">
+								    <label>* Username</label>
+								    <input required="required" type="text" class="form-control" id="newUsernmae" name="username"/>
+								    <p style="color: #828282;">Enter your username here</p>
+								    </div>
+								    
+								    <div class="from-group">
+								    <label>* Email Id</label>
+								    <input required="required" type="text" class="form-control" id="newEmail" name="email"/>
+								    <p style="color: #828282;">Enter your Email Id here. your email Id should be valid.</p>
+								    </div>
+								    
+								    <div class="from-group">
+								    <label>* Password</label>
+								    <input required="required" type="password" class="form-control" id="newPassword" name="password"/>
+								    <p style="color: #828282;">Enter your password here</p>
+								    </div>
+								    
+								    <button type="submit" class="btn btn-primary">Create a new Account</button>
+								</form>
+							</div>
+						</div>
+					</div>
+					
+					<!-- login of uesr -->
+					<div class="tab-pane fade" id="tab-2">
+						<div class="panel-group">
+							<div class="panel panel-default"
+								style="background-color: #ededed; margin-top: 20px">
+								<form action="">
+								    
+								    <div class="from-group">
+								    <label>* Email Id</label>
+								    <input required="required" type="text" class="form-control" id="Email" name="email"/>
+								    <p style="color: #828282;">Enter your Email Id here. your email Id should be valid.</p>
+								    </div>
+								    
+								    <div class="from-group">
+								    <label>* Password</label>
+								    <input required="required" type="password" class="form-control" id="Password" name="password"/>
+								    <p style="color: #828282;">Enter your password here</p>
+								    </div>
+								    
+								    <button type="submit" class="btn btn-primary">Log in</button>
+								</form>
+							</div>
+						</div>
+					</div>
+					
+					<!-- forget passowrd -->
+					<div class="tab-pane fade" id="tab-3">
+						<div class="panel-group">
+							<div class="panel panel-default"
+								style="background-color: #ededed; margin-top: 20px">
+								<form action="">
+								    
+								    <div class="from-group">
+								    <label>* Email Id</label>
+								    <input required="required" type="text" class="form-control" id="recoverEmail" name="email"/>
+								    <p style="color: #828282;">Enter your Email Id here. You will receive your password here</p>
+								    </div>
+								 
+								    
+								    <button type="submit" class="btn btn-primary">Click Here</button>
+								</form>
+							</div>
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</div>
+
+
+	</div>
+	<!-- end of container -->
+
+	<div class="clear-fix"></div>
+
+	<div th:replace="common/header :: body-bottom-scripts"></div>
+</body>
+</html>
