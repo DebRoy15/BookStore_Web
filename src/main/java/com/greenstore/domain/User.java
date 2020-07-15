@@ -21,18 +21,18 @@ import com.greenstore.domain.security.Authority;
 import com.greenstore.domain.security.UserRole;
 
 @Entity
-public class User implements UserDetails {
-
+public class User implements UserDetails{
+	
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
-	@Column(name = "id", nullable = false, updatable = false)
-	private long id;
+	@GeneratedValue(strategy=GenerationType.AUTO)
+	@Column(name="id", nullable = false, updatable = false)
+	private Long id;
 	private String username;
 	private String password;
-	private String firstname;
-	private String lastname;
+	private String firstName;
+	private String lastName;
 	
-	@Column(name = "email", nullable = false, updatable = false)
+	@Column(name="email", nullable = false, updatable = false)
 	private String email;
 	private String phone;
 	private boolean enabled=true;
@@ -41,11 +41,10 @@ public class User implements UserDetails {
 	@JsonIgnore
 	private Set<UserRole> userRoles = new HashSet<>();
 	
-	//Setter and Getter
-	public long getId() {
+	public Long getId() {
 		return id;
 	}
-	public void setId(long id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 	public String getUsername() {
@@ -60,17 +59,17 @@ public class User implements UserDetails {
 	public void setPassword(String password) {
 		this.password = password;
 	}
-	public String getFirstname() {
-		return firstname;
+	public String getFirstName() {
+		return firstName;
 	}
-	public void setFirstname(String firstname) {
-		this.firstname = firstname;
+	public void setFirstName(String firstName) {
+		this.firstName = firstName;
 	}
-	public String getLastname() {
-		return lastname;
+	public String getLastName() {
+		return lastName;
 	}
-	public void setLastname(String lastname) {
-		this.lastname = lastname;
+	public void setLastName(String lastName) {
+		this.lastName = lastName;
 	}
 	public String getEmail() {
 		return email;
@@ -85,7 +84,6 @@ public class User implements UserDetails {
 		this.phone = phone;
 	}
 	
-	
 	public void setEnabled(boolean enabled) {
 		this.enabled = enabled;
 	}
@@ -97,9 +95,10 @@ public class User implements UserDetails {
 	}
 	@Override
 	public Collection<? extends GrantedAuthority> getAuthorities() {
-        Set<GrantedAuthority> authorities = new HashSet<>();
-        userRoles.forEach(ur -> authorities.add(new Authority(ur.getRole().getName())));
-		return authorities;
+		Set<GrantedAuthority> authorites = new HashSet<>();
+		userRoles.forEach(ur -> authorites.add(new Authority(ur.getRole().getName())));
+		
+		return authorites;
 	}
 	@Override
 	public boolean isAccountNonExpired() {
@@ -121,8 +120,6 @@ public class User implements UserDetails {
 	public boolean isEnabled() {
 		return enabled;
 	}
-	
-	
 	
 	
 }
