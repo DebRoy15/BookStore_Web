@@ -55,7 +55,7 @@ public class UserServiceImpl implements UserService {
 		User localUser = userRepository.findByUsername(user.getUsername());
 		
 		if(localUser != null) {
-			logger.info("user {} already exists. Nothing will be done",user.getUsername());
+			logger.info("user {} already exists. Nothing will be done.",user.getUsername());
 		}
 		else {
 			for(UserRole ur: userRoles) {
